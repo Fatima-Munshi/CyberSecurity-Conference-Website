@@ -1,0 +1,21 @@
+/*===============================================
+    =            Myth Busting Section              =
+    ================================================*/
+    .myth-container {
+        margin-top: 30px;
+      }
+      .myth-block {
+        margin-bottom: 40px;
+        text-align: left;
+        max-width: 800px;
+        margin-left: auto;
+        margin-right: auto;
+      }
+      .myth-block h3 {
+        margin-bottom: 15px;
+        color: #4caf50;
+      }
+      .myth-block ul {
+        list-style: disc inside;
+        margin-top: 15px;
+      }

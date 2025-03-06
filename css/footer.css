@@ -1,0 +1,39 @@
+/*===============================================
+    =            Footer Styles                     =
+    ================================================*/
+    footer {
+        padding: 40px 20px;
+        border-top: 1px solid #ccc;
+        background: #f4f4f4;
+        color: #000;
+      }
+      .footer-container {
+        max-width: 1000px;
+        margin: 0 auto;
+        text-align: center;
+      }
+      .footer-container h3 {
+        font-size: 24px;
+        margin-bottom: 10px;
+      }
+      footer ul {
+        display: flex;
+        justify-content: center;
+        gap: 20px;
+        list-style: none;
+        padding: 0;
+        margin: 10px 0;
+      }
+      footer ul li a {
+        color: #4caf50;
+      }
+      .social-buttons {
+        display: flex;
+        justify-content: center;
+        gap: 10px;
+        margin-top: 10px;
+      }
+      .social-buttons a {
+        color: #4caf50;
+        font-size: 28px;
+      }

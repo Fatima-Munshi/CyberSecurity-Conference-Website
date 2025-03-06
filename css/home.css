@@ -1,0 +1,191 @@
+/*===============================================
+    =            Header & Navbar                   =
+    ================================================*/
+    header {
+      position: relative;
+      min-height: 100vh;
+    }
+    .navbar {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      z-index: 1000;
+      background:rgba(0,0,0,0.7);
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 15px 40px;
+      border-bottom: 1px solid rgba(255, 255, 255, 0.2);
+    }
+    .navbar .logo {
+      font-size: 26px;
+      font-weight: 700;
+      color: #4CAF50;
+    }
+    .main-nav ul {
+      display: flex;
+      gap: 30px;
+      list-style: none;
+    }
+    .main-nav ul li a {
+      font-size: 18px;
+      color: #fff;
+      transition: color 0.3s;
+    }
+    .main-nav ul li a:hover {
+      color: #4CAF50;
+    }
+    .menu-toggle {
+      cursor: pointer;
+      font-size: 36px;
+      color: #fff;
+      transition: color 0.3s;
+    }
+    .menu-toggle:hover {
+      color: #4CAF50;
+    }
+    .sidebar {
+      position: fixed;
+      top: 0;
+      right: 0;
+      width: 280px;
+      height: 100%;
+      background: #000;
+      transform: translateX(100%);
+      transition: transform 0.3s ease;
+      z-index: 1100;
+      box-shadow: -4px 0 15px rgba(0,0,0,0.9);
+      padding-top: 60px;
+    }
+    .sidebar.open {
+      transform: translateX(0);
+    }
+    .sidebar .close-btn {
+      position: absolute;
+      top: 20px;
+      right: 20px;
+      cursor: pointer;
+      font-size: 36px;
+      color: #fff;
+    }
+    .sidebar ul {
+      list-style: none;
+      text-align: center;
+    }
+    .sidebar ul li {
+      margin: 20px 0;
+    }
+    .sidebar ul li a {
+      font-size: 20px;
+      color: #fff;
+      padding: 10px 0;
+      transition: background 0.3s, box-shadow 0.3s;
+    }
+    .sidebar ul li a:hover {
+      background: #4CAF50;
+      box-shadow: 0 4px 6px rgba(0,0,0,0.5);
+    }
+    
+    /*===============================================
+    =            Hero Section (Home)               =
+    ================================================*/
+    .hero-content {
+      max-width: 1000px;
+      margin: 0 auto;
+      text-align: center;
+      /* Reduced top padding to bring the event name closer to the fixed navbar */
+      padding-top: 10%;
+      padding-bottom: 60px;
+      color: #fff;
+    }
+    .hero-content h1 {
+      font-size: 64px;
+      font-weight: 700;
+      margin-bottom: 20px;
+      letter-spacing: 2px;
+      text-shadow: 2px 2px 8px rgba(0,0,0,0.5);
+    }
+    .hero-content h2 {
+      font-size: 32px;
+      font-weight: 400;
+      margin-bottom: 40px;
+      text-shadow: 1px 1px 5px rgba(0,0,0,0.5);
+    }
+    
+    /*===============================================
+    =            Countdown Section                 =
+    ================================================*/
+    #countdown {
+      display: flex;
+      justify-content: center;
+      gap: 30px;
+      margin-bottom: 60px;
+    }
+    .countdown-item {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+    }
+    .countdown-item label {
+      margin-top: 12px;
+      font-size: 16px;
+      letter-spacing: 1px;
+    }
+    .flip-digit {
+      width: 90px;
+      height: 120px;
+      perspective: 800px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+    .card {
+      width: 100%;
+      height: 100%;
+      background: #1b1b1b;
+      color: #fff;
+      font-size: 48px;
+      font-weight: 700;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      border-radius: 8px;
+      border: 2px solid #4CAF50;
+      transform-style: preserve-3d;
+      transition: transform 0.6s cubic-bezier(0.4,0,0.2,1);
+    }
+    .card.flip {
+      animation: flipAnimation 0.6s forwards;
+    }
+    @keyframes flipAnimation {
+      0%   { transform: rotateX(0deg); }
+      50%  { transform: rotateX(-90deg); }
+      100% { transform: rotateX(0deg); }
+    }
+    
+    /*===============================================
+    =            Action Buttons                    =
+    ================================================*/
+    .action-buttons {
+      margin-top: 40px;
+    }
+    .action-buttons button,
+    .cta-button {
+      background: linear-gradient(45deg, #66bb6a, #4caf50);
+      border: none;
+      color: #fff;
+      padding: 15px 30px;
+      font-size: 18px;
+      font-weight: 600;
+      border-radius: 30px;
+      margin: 0 15px;
+      cursor: pointer;
+      transition: transform 0.3s, box-shadow 0.3s;
+      box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
+    }
+    .action-buttons button:hover,
+    .cta-button:hover {
+      transform: translateY(-3px);
+      box-shadow: 0 8px 15px rgba(0,0,0,0.5);
+    }

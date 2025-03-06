@@ -1,0 +1,19 @@
+/* technical.css */
+.section-container {
+    max-width: 1000px;
+    margin: 0 auto;
+    text-align: center;
+    padding: 40px 20px;
+  }
+  
+  .section-container h2 {
+    font-size: 48px;
+    margin-bottom: 20px;
+  }
+  
+  .section-container p {
+    font-size: 18px;
+    line-height: 1.6;
+    margin-bottom: 20px;
+  }
+  

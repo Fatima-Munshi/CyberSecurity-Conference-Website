@@ -1,0 +1,299 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Cyber Security Conclave 2025</title>
+  <!-- Google Fonts & Material Icons -->
+  <link href="https://fonts.googleapis.com/css?family=Montserrat:400,700&display=swap" rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet" />
+  <!-- Global CSS and Page-Specific CSS Files -->
+  <link rel="stylesheet" href="css/common.css">
+  <link rel="stylesheet" href="css/home.css">
+  <link rel="stylesheet" href="css/about.css">
+  <link rel="stylesheet" href="css/dashboard.css">
+  <link rel="stylesheet" href="css/myth.css">
+  <link rel="stylesheet" href="css/register.css">
+  <link rel="stylesheet" href="css/technical.css">
+  <link rel="stylesheet" href="css/contact.css">
+  <link rel="stylesheet" href="css/footer.css">
+</head>
+<body>
+    <!--===============================================
+         Header Section with Navbar, Sidebar, Hero Content, Countdown & Action Buttons
+    ================================================-->
+    <header id="home" style="
+    background-image: url('assets/home1.jpg');
+    background-repeat: no-repeat;
+    background-position: center center;
+    background-size: cover;
+    background-attachment: fixed;">>
+      <!-- Navbar -->
+      <div class="navbar">
+        <div class="logo">CyberSec2025</div>
+        <nav class="main-nav">
+          <ul>
+            <li><a href="#home">Home</a></li>
+            <li><a href="#about">About</a></li>
+            <li><a href="#event-dashboard">Dashboard</a></li>
+            <li><a href="#book-slot">Book Your Slot</a></li>
+            <li><a href="#contact">Contact</a></li>
+          </ul>
+        </nav>
+        <div class="menu-toggle" onclick="toggleSidebar()" id="menuToggle">
+          <span class="material-icons" id="menuIcon">menu</span>
+        </div>
+      </div>
+      <!-- Off-Canvas Sidebar -->
+      <div class="sidebar" id="sidebar">
+        <div class="close-btn" onclick="toggleSidebar()">
+          <span class="material-icons">close</span>
+        </div>
+        <ul>
+          <li><a href="#home" onclick="toggleSidebar()">Home</a></li>
+          <li><a href="#about" onclick="toggleSidebar()">About</a></li>
+          <li><a href="#event-dashboard" onclick="toggleSidebar()">Dashboard</a></li>
+          <li><a href="#myth-busting" onclick="toggleSidebar()">Myth Busting</a></li>
+          <li><a href="#book-slot" onclick="toggleSidebar()">Book Your Slot</a></li>
+          <li><a href="#technical-support" onclick="toggleSidebar()">Technical Support</a></li>
+          <li><a href="#contact" onclick="toggleSidebar()">Contact</a></li>
+        </ul>
+      </div>
+      
+      <!-- Hero Content -->
+      <div class="hero-content">
+        <h1>Cyber Security Conclave</h1>
+        <h2>Empowering the Digital Frontier</h2>
+        <!-- Countdown Timer -->
+        <div id="countdown">
+          <div class="countdown-item">
+            <div id="days" class="flip-digit" data-value="00">
+              <div class="card"><span>00</span></div>
+            </div>
+            <label>Days</label>
+          </div>
+          <div class="countdown-item">
+            <div id="hours" class="flip-digit" data-value="00">
+              <div class="card"><span>00</span></div>
+            </div>
+            <label>Hours</label>
+          </div>
+          <div class="countdown-item">
+            <div id="minutes" class="flip-digit" data-value="00">
+              <div class="card"><span>00</span></div>
+            </div>
+            <label>Minutes</label>
+          </div>
+          <div class="countdown-item">
+            <div id="seconds" class="flip-digit" data-value="00">
+              <div class="card"><span>00</span></div>
+            </div>
+            <label>Seconds</label>
+          </div>
+        </div>
+        <div class="action-buttons">
+          <!-- The Register Now button can for example lead to registration -->
+          <a href="register.html"><button>Register Now</button></a>
+          <!-- You may use Learn More button to scroll to About section -->
+          <a href="#about"><button>Learn More</button></a>
+        </div>
+      </div>
+    </header>
+    
+    <!--===============================================
+           About Section (Light Theme) with Meet the Team
+    ================================================-->
+    <section id="about" class="section-light">
+      <div class="section-container">
+        <h2>About the Event</h2>
+        <p>
+          Cyber Security Conclave 2025 is a premier event designed to bring together experts, enthusiasts, and professionals from around the globe. Discover cutting-edge strategies and insights in cybersecurity, and join us in empowering your digital future.
+        </p>
+        <h2>Meet the Team</h2>
+        <div class="team-container">
+          <div class="team-member">
+            <img src="https://via.placeholder.com/200x200.png?text=Member+1" alt="Member 1">
+            <div class="member-info">
+              <h4>John Doe</h4>
+              <p>CEO</p>
+            </div>
+          </div>
+          <div class="team-member">
+            <img src="https://via.placeholder.com/200x200.png?text=Member+2" alt="Member 2">
+            <div class="member-info">
+              <h4>Jane Smith</h4>
+              <p>CTO</p>
+            </div>
+          </div>
+          <div class="team-member">
+            <img src="https://via.placeholder.com/200x200.png?text=Member+3" alt="Member 3">
+            <div class="member-info">
+              <h4>Sam Brown</h4>
+              <p>Lead Analyst</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+    
+    <!--===============================================
+           Event Dashboard Section (Dark Theme) with Day Toggle
+    ================================================-->
+    <section id="event-dashboard" class="section-dark">
+      <div class="section-container">
+        <h2>Event Dashboard</h2>
+        <p>
+          Access real-time updates, schedules, and interactive sessions.
+        </p>
+        <!-- Toggle Buttons for Day 1 and Day 2 -->
+        <div class="dashboard-toggle">
+          <button id="day1-btn" class="active" onclick="toggleDay('day1')">Day 1</button>
+          <button id="day2-btn" onclick="toggleDay('day2')">Day 2</button>
+        </div>
+        <!-- Dashboard content for Day 1 -->
+        <div id="day1-dashboard" class="dashboard-day">
+          <div class="card-item">
+            <h3>Schedule</h3>
+            <p>Day 1 schedule - Registration, Opening Ceremony, and Keynote.</p>
+          </div>
+          <div class="card-item">
+            <h3>Speakers</h3>
+            <p>Featured speakers presenting on cybersecurity trends.</p>
+          </div>
+          <div class="card-item">
+            <h3>Highlights</h3>
+            <p>Refreshments & networking sessions.</p>
+          </div>
+        </div>
+        <!-- Dashboard content for Day 2 (hidden by default) -->
+        <div id="day2-dashboard" class="dashboard-day" style="display: none;">
+          <div class="card-item">
+            <h3>Workshops</h3>
+            <p>Hands-on sessions on advanced cybersecurity techniques.</p>
+          </div>
+          <div class="card-item">
+            <h3>Panel Discussion</h3>
+            <p>Interactive discussion with industry experts.</p>
+          </div>
+          <div class="card-item">
+            <h3>Closing Ceremony</h3>
+            <p>Wrap-up and award ceremony.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+    
+    <!--===============================================
+           Myth Busting Section (Light Theme, Stacked)
+    ================================================-->
+    <section id="myth-busting" class="section-light">
+      <div class="section-container">
+        <h2>Myth Busting</h2>
+        <div class="myth-container">
+          <div class="myth-block">
+            <h3>Myth vs Fact</h3>
+            <ul>
+              <li>Myth: Cybersecurity is only for large companies.</li>
+              <li>Fact: Every organization, regardless of size, is at risk.</li>
+              <li>Myth: Antivirus software is enough.</li>
+              <li>Fact: A layered security approach is essential.</li>
+            </ul>
+          </div>
+          <div class="myth-block">
+            <h3>Did You Know?</h3>
+            <ul>
+              <li>Over 40% of cyber attacks target small businesses.</li>
+              <li>Hackers can breach systems in under 5 minutes.</li>
+              <li>Continuous training and awareness are key to defense.</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </section>
+    
+    <!--===============================================
+           Book Your Slot Section (Dark Theme)
+    ================================================-->
+    <section id="book-slot" class="section-dark">
+      <div class="section-container">
+        <h2>Book Your Slot</h2>
+        <p>
+          Don’t miss your chance to participate in exclusive sessions and networking opportunities. Reserve your spot today!
+        </p>
+        <!-- Button leading to the registration page -->
+        <a href="register.html"><button class="cta-button">Book Now</button></a>
+      </div>
+    </section>
+    
+    <!--===============================================
+           Technical Support Section (Light Theme)
+    ================================================-->
+    <section id="technical-support" class="section-light">
+      <div class="section-container">
+        <h2>Technical Support</h2>
+        <p>
+          Our dedicated technical support team is here to help with any registration or platform-related issues.
+        </p>
+        <p>Email: support@cybersec2025.com | Phone: +1 234 567 890</p>
+      </div>
+    </section>
+    
+    <!--===============================================
+           Contact Section (Dark Theme)
+    ================================================-->
+    <section id="contact" class="section-dark">
+      <div class="section-container">
+        <h2>Contact Us</h2>
+        <p>
+          Have questions or need more information? Fill out the form below, and we’ll get back to you as soon as possible.
+        </p>
+        <form style="max-width: 600px; margin: 20px auto; text-align: left;">
+          <div style="margin-bottom: 15px;">
+            <label for="name">Name:</label><br>
+            <input type="text" id="name" name="name" style="width: 100%; padding: 10px; border-radius: 4px; border: none;">
+          </div>
+          <div style="margin-bottom: 15px;">
+            <label for="email">Email:</label><br>
+            <input type="email" id="email" name="email" style="width: 100%; padding: 10px; border-radius: 4px; border: none;">
+          </div>
+          <div style="margin-bottom: 15px;">
+            <label for="message">Message:</label><br>
+            <textarea id="message" name="message" rows="5" style="width: 100%; padding: 10px; border-radius: 4px; border: none;"></textarea>
+          </div>
+          <button type="submit" style="background: linear-gradient(45deg, #66bb6a, #4caf50); border: none; padding: 15px 40px; font-size: 20px; border-radius: 30px; cursor: pointer; transition: transform 0.3s; box-shadow: 0 4px 15px rgba(0,0,0,0.3);">Send Message</button>
+        </form>
+      </div>
+    </section>
+    
+    <!--===============================================
+           Footer Section (Light Theme)
+    ================================================-->
+    <footer class="section-light">
+      <div class="footer-container">
+        <div style="display: flex; flex-wrap: wrap; justify-content: space-between; align-items: center;">
+          <div>
+            <h3>Quick Links</h3>
+            <ul>
+              <li><a href="#home">Home</a></li>
+              <li><a href="#about">About</a></li>
+              <li><a href="#event-dashboard">Dashboard</a></li>
+              <li><a href="#contact">Contact</a></li>
+            </ul>
+          </div>
+          <div>
+            <h3>Follow Us</h3>
+            <div class="social-buttons">
+              <a href="#"><span class="material-icons">public</span></a>
+              <a href="#"><span class="material-icons">share</span></a>
+              <a href="#"><span class="material-icons">thumb_up</span></a>
+              <a href="#"><span class="material-icons">chat</span></a>
+            </div>
+          </div>
+        </div>
+        <p style="margin-top: 10px;">&copy; 2025 CyberSec2025. All Rights Reserved.</p>
+      </div>
+    </footer>  
+  <!-- Shared JavaScript -->
+  <script src="js/main.js"></script>
+</body>
+</html>

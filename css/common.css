@@ -1,0 +1,92 @@
+ /*===============================================
+    =            Base & Reset styles               =
+    ================================================*/
+    * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+      }
+      html, body {
+        font-family: 'Montserrat', sans-serif;
+        overflow-x: hidden;
+      }
+      a {
+        text-decoration: none;
+        color: inherit;
+      }
+   
+      
+    /*===============================================
+    =            Section Containers                =
+    ================================================*/
+    .section-container {
+        max-width: 1000px;
+        margin: 0 auto;
+        text-align: center;
+        padding: 40px 20px;
+        opacity: 0;
+        transform: translateY(50px) rotateX(10deg);
+        transition: opacity 0.8s ease-out, transform 0.8s ease-out;
+      }
+      .section-container.in-view {
+        opacity: 1;
+        transform: translateY(0) rotateX(0);
+      }
+      .section-container h2 {
+        font-size: 48px;
+        margin-bottom: 20px;
+      }
+      .section-container p {
+        font-size: 18px;
+        line-height: 1.6;
+        margin-bottom: 20px;
+      }
+      
+      /* Alternating Section Themes (Light and Dark) */
+      .section-light {
+        background: #f4f4f4;
+        color: #000;
+      }
+      .section-dark {
+        background: #111;
+        color: #fff;
+      }
+      /* For any lists inside sections */
+      .section-container ul {
+        list-style-type: none;
+        padding: 0;
+        margin: 20px auto;
+        text-align: left;
+      }
+      .section-container ul li {
+        margin: 10px 0;
+        padding-left: 20px;
+        position: relative;
+      }
+      .section-container ul li::before {
+        content: "✔";
+        position: absolute;
+        left: 0;
+        color: #4caf50;
+      }   
+ 
+ /*===============================================
+    =            Responsive Adjustments             =
+    ================================================*/
+    @media (max-width: 768px) {
+        .hero-content h1 {
+          font-size: 48px;
+        }
+        .hero-content h2 {
+          font-size: 24px;
+        }
+        .main-nav {
+          display: none;
+        }
+        .myth-container {
+          padding: 0 20px;
+        }
+        .team-container {
+          flex-direction: column;
+        }
+      }
