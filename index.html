@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
@@ -7,6 +8,8 @@
   <!-- Google Fonts & Material Icons -->
   <link href="https://fonts.googleapis.com/css?family=Montserrat:400,700&display=swap" rel="stylesheet" />
   <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet" />
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/tailwindcss/2.2.19/tailwind.min.css" rel="stylesheet">
+    
   <!-- Global CSS and Page-Specific CSS Files -->
   <link rel="stylesheet" href="css/common.css">
   <link rel="stylesheet" href="css/home.css">
@@ -18,431 +21,579 @@
   <link rel="stylesheet" href="css/contact.css">
   <link rel="stylesheet" href="css/footer.css">
 </head>
+
 <body>
-    <!--===============================================
+  <!--===============================================
          Header Section with Navbar, Sidebar, Hero Content, Countdown & Action Buttons
     ================================================-->
-    <header id="home" style="
+  <header id="home" style="
     background-image: url('assets/home1.jpg');
     background-repeat: no-repeat;
     background-position: center center;
     background-size: cover;
     background-attachment: fixed;">>
-      <!-- Navbar -->
-      <div class="navbar">
-        <div class="logo">CyberSec2025</div>
-        <nav class="main-nav">
+    <!-- Navbar -->
+    <div class="navbar">
+      <div class="logo">CyberSec2025</div>
+      <nav class="main-nav">
+        <ul>
+          <li><a href="#home">Home</a></li>
+          <li><a href="#about">About</a></li>
+          <li><a href="#event-dashboard">Dashboard</a></li>
+          <li><a href="#book-slot">Book Your Slot</a></li>
+          <li><a href="#contact">Contact</a></li>
+        </ul>
+      </nav>
+      <div class="menu-toggle" onclick="toggleSidebar()" id="menuToggle">
+        <span class="material-icons" id="menuIcon">menu</span>
+      </div>
+    </div>
+    <!-- Off-Canvas Sidebar -->
+    <div class="sidebar" id="sidebar">
+      <div class="close-btn" onclick="toggleSidebar()">
+        <span class="material-icons">close</span>
+      </div>
+      <ul>
+        <li><a href="#home" onclick="toggleSidebar()">Home</a></li>
+        <li><a href="#about" onclick="toggleSidebar()">About</a></li>
+        <li><a href="#event-dashboard" onclick="toggleSidebar()">Dashboard</a></li>
+        <li><a href="#myth-busting" onclick="toggleSidebar()">Myth Busting</a></li>
+        <li><a href="#book-slot" onclick="toggleSidebar()">Book Your Slot</a></li>
+        <li><a href="#technical-support" onclick="toggleSidebar()">Technical Support</a></li>
+        <li><a href="#contact" onclick="toggleSidebar()">Contact</a></li>
+      </ul>
+    </div>
+
+    <!-- Hero Content -->
+    <div class="hero-content">
+      <h1>Cyber Security Conclave</h1>
+      <h2>Empowering the Digital Frontier</h2>
+      <!-- Countdown Timer -->
+      <div id="countdown">
+        <div class="countdown-item">
+          <div id="days" class="flip-digit" data-value="00">
+            <div class="card"><span>00</span></div>
+          </div>
+          <label>Days</label>
+        </div>
+        <div class="countdown-item">
+          <div id="hours" class="flip-digit" data-value="00">
+            <div class="card"><span>00</span></div>
+          </div>
+          <label>Hours</label>
+        </div>
+        <div class="countdown-item">
+          <div id="minutes" class="flip-digit" data-value="00">
+            <div class="card"><span>00</span></div>
+          </div>
+          <label>Minutes</label>
+        </div>
+        <div class="countdown-item">
+          <div id="seconds" class="flip-digit" data-value="00">
+            <div class="card"><span>00</span></div>
+          </div>
+          <label>Seconds</label>
+        </div>
+      </div>
+      <div class="action-buttons">
+        <!-- The Register Now button can for example lead to registration -->
+        <a href="register.html"><button>Register Now</button></a>
+        <!-- You may use Learn More button to scroll to About section -->
+        <a href="#about"><button>Learn More</button></a>
+      </div>
+    </div>
+  </header>
+
+  <!--===============================================
+           About Section (Light Theme) with Meet the Team
+    ================================================-->
+  <section id="about" class="section-light">
+    <div class="about-container reveal">
+      <!-- Left Side: Image (Handled by CSS) -->
+      <div class="about-image"></div>
+
+      <!-- Right Side: Text Content -->
+      <div class="about-content">
+        <h2>About The Conference</h2>
+        <p>
+          Cyber Security Conclave 2025 is a premier event designed to bring together experts, enthusiasts, and
+          professionals from around the globe. Discover cutting-edge strategies and insights in cybersecurity, and join
+          us in empowering your digital future.
+        </p>
+        <ul>
+          <li><span class="tick-mark">&#10004;</span> Networking Sessions</li>
+          <li><span class="tick-mark">&#10004;</span> Meet New Professional Faces</li>
+          <li><span class="tick-mark">&#10004;</span> Get Inspired by Amazing Speakers</li>
+          <li><span class="tick-mark">&#10004;</span> Explore Latest Innovations in Cybersecurity</li>
+          <li><span class="tick-mark">&#10004;</span> Gain Insights into Emerging Threats & Solutions</li>
+        </ul>
+        <a href="#" class="learn-more-btn">LEARN MORE</a>
+      </div>
+    </div>
+
+    <!-- Why You Should Join Us Section  -->
+    <div class=".why-join reveal">
+      <h2 class="why-join-title">Why You Should Join Us</h2>
+      <div class="cards-container">
+        <div class="card">
+          <div class="card-header">
+            <i class="lni lni-microphone icon"></i>
+            <h3 class="card-title">Great Speakers</h3>
+          </div>
+          <p>Learn from industry-leading experts.</p>
+          <div class="card-badge">01</div>
+        </div>
+
+        <div class="card">
+          <div class="card-header">
+            <i class="lni lni-users icon"></i>
+            <h3 class="card-title">New People</h3>
+          </div>
+          <p>Meet and connect with professionals.</p>
+          <div class="card-badge">02</div>
+        </div>
+
+        <div class="card">
+          <div class="card-header">
+            <i class="lni lni-bullhorn icon"></i>
+            <h3 class="card-title">Global Event</h3>
+          </div>
+          <p>Join a worldwide conference experience.</p>
+          <div class="card-badge">03</div>
+        </div>
+
+        <div class="card">
+          <div class="card-header">
+            <i class="lni lni-heart icon"></i>
+            <h3 class="card-title">Get Inspired</h3>
+          </div>
+          <p>Hear motivational stories from experts.</p>
+          <div class="card-badge">04</div>
+        </div>
+
+        <div class="card">
+          <div class="card-header">
+            <i class="lni lni-network icon"></i>
+            <h3 class="card-title">Networking Session</h3>
+          </div>
+          <p>Build valuable professional relationships.</p>
+          <div class="card-badge">05</div>
+        </div>
+
+        <div class="card">
+          <div class="card-header">
+            <i class="lni lni-users icon"></i>
+            <h3 class="card-title">Meet New Faces</h3>
+          </div>
+          <p>Connect with fresh talent and leaders.</p>
+          <div class="card-badge">06</div>
+        </div>
+      </div>
+    </div>
+
+    <!-- who attend sections -->
+    <div class="who-attends reveal">
+      <h2 class="who-attends-title">Who Attends ?</h2>
+      <div class="attendees-container">
+
+        <div class="attendee-card">
+          <img src="/assets/about/Developer activity-amico.png " alt="Mission Image">
+          <h3 class="card-title">Developers</h3>
+          <p>Systems, Embedded, Applications, Kernel & Operating Systems</p>
+        </div>
+
+        <div class="attendee-card">
+          <img src="/assets/about/Operating system upgrade-amico.png " alt="Learn Image">
+          <h3 class="card-title">Operations</h3>
+          <p>Architects, SRE, System Administrators and DevOps</p>
+        </div>
+
+        <div class="attendee-card">
+          <img src="/assets/about/Group Chat-amico.png " alt="Benefits Image">
+          <h3 class="card-title">Community & Leadership</h3>
+          <p>Technical Managers, Community Managers, Executive Leaders, Legal & Compliance, OSPO Teams</p>
+        </div>
+
+        <div class="attendee-card">
+          <img src="/assets/about/Social media-bro.png " alt="Networking Image">
+          <h3 class="card-title">Academic, Media, Other</h3>
+          <p>Professors, Students, Media, Analysts, Product, Biz Dev, Marketing</p>
+        </div>
+
+      </div>
+    </div>
+
+    <!-- taem section -->
+
+    <div class="our-team  reveal">
+      <h2 class="team-title">Meet Our Team</h2>
+      <p class="team-description">Our team of professionals is dedicated to excellence, creativity, and innovation.</p>
+
+      <div class="team-container">
+
+        <!-- Team Member 1 -->
+        <div class="team-card">
+          <div class="team-img" style="background-image: url('/assets/about/teamm.png.crdownload');">
+            <div class="social-icons">
+              <a href="#"><i class="fab fa-facebook-f"></i></a>
+              <a href="#"><i class="fab fa-twitter"></i></a>
+              <a href="#"><i class="fab fa-instagram"></i></a>
+              <a href="#"><i class="fab fa-linkedin-in"></i></a>
+            </div>
+          </div>
+          <h3 class="team-name">Emily Williams</h3>
+          <p class="team-role">Product Designer</p>
+        </div>
+
+        <!-- Team Member 2 -->
+        <div class="team-card  reveal">
+          <div class="team-img" style="background-image: url('/assets/about/teamm2.png');">
+            <div class="social-icons">
+              <a href="#"><i class="fab fa-facebook-f"></i></a>
+              <a href="#"><i class="fab fa-twitter"></i></a>
+              <a href="#"><i class="fab fa-instagram"></i></a>
+              <a href="#"><i class="fab fa-linkedin-in"></i></a>
+            </div>
+          </div>
+          <h3 class="team-name">Patric Green</h3>
+          <p class="team-role">Front-end Developer</p>
+        </div>
+
+        <!-- Team Member 3 -->
+        <div class="team-card">
+          <div class="team-img" style="background-image: url('/assets/about/teamm3.png');">
+            <div class="social-icons">
+              <a href="#"><i class="fab fa-facebook-f"></i></a>
+              <a href="#"><i class="fab fa-twitter"></i></a>
+              <a href="#"><i class="fab fa-instagram"></i></a>
+              <a href="#"><i class="fab fa-linkedin-in"></i></a>
+            </div>
+          </div>
+          <h3 class="team-name">Paul Kowalsy</h3>
+          <p class="team-role">Lead Designer</p>
+        </div>
+
+        <!-- Team Member 4 -->
+        <div class="team-card">
+          <div class="team-img" style="background-image: url('/assets/about/teamm4.png');">
+            <div class="social-icons">
+              <a href="#"><i class="fab fa-facebook-f"></i></a>
+              <a href="#"><i class="fab fa-twitter"></i></a>
+              <a href="#"><i class="fab fa-instagram"></i></a>
+              <a href="#"><i class="fab fa-linkedin-in"></i></a>
+            </div>
+          </div>
+          <h3 class="team-name">Jhon Doe</h3>
+          <p class="team-role">Back-end Developer</p>
+        </div>
+
+      </div>
+
+  </section>
+
+  <!--===============================================
+           Event Dashboard Section (Dark Theme) with Day Toggle
+    ================================================-->
+    <section id="event-dashboard">
+      <div class="containerr mx-auto px-4 py-8 content-container">
+          <h1 class="text-white text-center">EVENT DASHBOARD</h1>
+
+          <!-- Day Toggle -->
+          <div class="flex justify-center">
+              <div class="toggle-pill">
+                  <div class="toggle-pill-text">
+                      <span>Day 1</span>
+                      <span>Day 2</span>
+                  </div>
+                  <div class="toggle-pill-slider"></div>
+              </div>
+          </div>
+
+          <!-- Event Slides -->
+          <div class="event-slides">
+              <!-- Speaker 1 -->
+              <div class="event-slide active" id="slide-1">
+                  <div class="event-box">
+                      <div class="event-content">
+                          <h2 class="event-title">Mark Patterson</h2>
+                          <p class="event-role text-lg">Hacker & Cybersecurity Trainer</p>
+                          <p class="event-topic text-xl mt-4">Ethical Hacking 101 – Hands-on Penetration Testing</p>
+                          <p class="event-time">10:00 PM - 11:30 PM</p>
+                          <button class="action-button event-button" id="show-button-1" onclick="showDetails(1)">Show
+                              Details</button>
+                          <div class="event-details" id="details-1">
+                              <p class="text-white">
+                                  Join Mark Patterson for an intensive hands-on workshop that will introduce you to
+                                  the
+                                  world of ethical hacking. This session covers the basics of penetration testing,
+                                  including reconnaissance, scanning, vulnerability assessment, and exploitation.
+                                  Participants will learn practical skills that can be immediately applied to identify
+                                  and
+                                  address security vulnerabilities in their organizations.
+                              </p>
+                              <button class="action-button mt-4" onclick="hideDetails(1)">Show Less</button>
+                          </div>
+                      </div>
+                      <div class="event-image">
+                          <div class="event-image-container">
+                              <img src="assets/dashboard/speaker1.jpg" alt="Mark Patterson">
+                          </div>
+                      </div>
+                  </div>
+              </div>
+
+              <!-- Speaker 2 -->
+              <div class="event-slide next" id="slide-2">
+                  <div class="event-box">
+                      <div class="event-content">
+                          <h2 class="event-title">Dr. Sophia Reynolds</h2>
+                          <p class="event-role text-lg">Chief Security Officer, CyberSafe Inc.</p>
+                          <p class="event-topic text-xl mt-4">The Future of AI in Cybersecurity</p>
+                          <p class="event-time">1:00 AM - 3:00 AM</p>
+                          <button class="action-button event-button" id="show-button-2" onclick="showDetails(2)">Show
+                              Details</button>
+                          <div class="event-details" id="details-2">
+                              <p class="text-white">
+                                  Dr. Sophia Reynolds explores the cutting-edge intersection of artificial
+                                  intelligence
+                                  and cybersecurity. This talk will delve into how AI is transforming the security
+                                  landscape, from advanced threat detection to automated response systems. Learn about
+                                  both the potential benefits and the unique challenges that AI brings to modern
+                                  cybersecurity practices.
+                              </p>
+                              <button class="action-button mt-4" onclick="hideDetails(2)">Show Less</button>
+                          </div>
+                      </div>
+                      <div class="event-image">
+                          <div class="event-image-container">
+                              <img src="assets/dashboard/speaker2.jpg" alt="Dr. Sophia Reynolds">
+                          </div>
+                      </div>
+                  </div>
+              </div>
+
+              <!-- Speaker 3 -->
+              <div class="event-slide next" id="slide-3">
+                  <div class="event-box">
+                      <div class="event-content">
+                          <h2 class="event-title">Raj Patel</h2>
+                          <p class="event-role text-lg">Cloud Security Architect, FortiCloud</p>
+                          <p class="event-topic text-xl mt-4">Securing Cloud Infrastructure</p>
+                          <p class="event-time">2:00 PM - 3:30 PM</p>
+                          <button class="action-button event-button" id="show-button-3" onclick="showDetails(3)">Show
+                              Details</button>
+                          <div class="event-details" id="details-3">
+                              <p class="text-white">
+                                  Raj Patel presents a comprehensive overview of cloud security best practices. This
+                                  session covers critical aspects of securing cloud infrastructure, including identity
+                                  and
+                                  access management, network security, data protection, and compliance frameworks.
+                                  Attendees will gain practical insights for implementing robust security measures
+                                  across
+                                  various cloud platforms.
+                              </p>
+                              <button class="action-button mt-4" onclick="hideDetails(3)">Show Less</button>
+                          </div>
+                      </div>
+                      <div class="event-image">
+                          <div class="event-image-container">
+                              <img src="assets/dashboard/speaker3.jpg" alt="Raj Patel">
+                          </div>
+                      </div>
+                  </div>
+              </div>
+
+              <!-- Speaker 4 -->
+              <div class="event-slide next" id="slide-4">
+                  <div class="event-box">
+                      <div class="event-content">
+                          <h2 class="event-title">Emma Chen</h2>
+                          <p class="event-role text-lg">Security Researcher, DefenseTech Labs</p>
+                          <p class="event-topic text-xl mt-4">Zero-Day Vulnerabilities: Detection and Mitigation</p>
+                          <p class="event-time">4:00 PM - 5:30 PM</p>
+                          <button class="action-button event-button" id="show-button-4" onclick="showDetails(4)">Show
+                              Details</button>
+                          <div class="event-details" id="details-4">
+                              <p class="text-white">
+                                  Emma Chen shares advanced techniques for identifying and addressing zero-day
+                                  vulnerabilities before they can be exploited. This technical session will cover
+                                  vulnerability research methodologies, exploit development analysis, and strategies
+                                  for
+                                  building resilient systems that can withstand previously unknown attack vectors.
+                              </p>
+                              <button class="action-button mt-4" onclick="hideDetails(4)">Show Less</button>
+                          </div>
+                      </div>
+                      <div class="event-image">
+                          <div class="event-image-container">
+                              <img src="assets/dashboard/speaker4.jpg" alt="Emma Chen">
+                          </div>
+                      </div>
+                  </div>
+              </div>
+
+              <!-- Speaker 5 -->
+              <div class="event-slide next" id="slide-5">
+                  <div class="event-box">
+                      <div class="event-content">
+                          <h2 class="event-title">Dr. James Wilson</h2>
+                          <p class="event-role text-lg">Director of Cybersecurity, TechDefend</p>
+                          <p class="event-topic text-xl mt-4">Building a Security-First Organization</p>
+                          <p class="event-time">6:00 PM - 7:30 PM</p>
+                          <button class="action-button event-button" id="show-button-5" onclick="showDetails(5)">Show
+                              Details</button>
+                          <div class="event-details" id="details-5">
+                              <p class="text-white">
+                                  Dr. James Wilson discusses organizational approaches to embedding security into
+                                  company
+                                  culture. This leadership-focused session covers security governance frameworks,
+                                  building
+                                  effective security teams, managing security budgets, and creating security awareness
+                                  programs that actually work across all levels of an organization.
+                              </p>
+                              <button class="action-button mt-4" onclick="hideDetails(5)">Show Less</button>
+                          </div>
+                      </div>
+                      <div class="event-image">
+                          <div class="event-image-container">
+                              <img src="assets/dashboard/speaker5.jpg" alt="Dr. James Wilson">
+                          </div>
+                      </div>
+                  </div>
+              </div>
+          </div>
+
+          <!-- Navigation Dots -->
+          <div class="dots-navigation">
+              <div class="dot active" onclick="goToSlide(0)"></div>
+              <div class="dot" onclick="goToSlide(1)"></div>
+              <div class="dot" onclick="goToSlide(2)"></div>
+              <div class="dot" onclick="goToSlide(3)"></div>
+              <div class="dot" onclick="goToSlide(4)"></div>
+          </div>
+      </div>
+
+      <script src="js/dashboard.js"></script> <!-- Link to the JavaScript file -->
+  </section>
+
+  <!--===============================================
+           Myth Busting Section (Light Theme, Stacked)
+    ================================================-->
+  <section id="myth-busting" class="section-light">
+    <div class="section-container">
+      <h2>Myth Busting</h2>
+      <div class="myth-container">
+        <div class="myth-block">
+          <h3>Myth vs Fact</h3>
+          <ul>
+            <li>Myth: Cybersecurity is only for large companies.</li>
+            <li>Fact: Every organization, regardless of size, is at risk.</li>
+            <li>Myth: Antivirus software is enough.</li>
+            <li>Fact: A layered security approach is essential.</li>
+          </ul>
+        </div>
+        <div class="myth-block">
+          <h3>Did You Know?</h3>
+          <ul>
+            <li>Over 40% of cyber attacks target small businesses.</li>
+            <li>Hackers can breach systems in under 5 minutes.</li>
+            <li>Continuous training and awareness are key to defense.</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!--===============================================
+           Book Your Slot Section (Dark Theme)
+    ================================================-->
+  <section id="book-slot" class="section-dark">
+    <div class="section-container">
+      <h2>Book Your Slot</h2>
+      <p>
+        Don’t miss your chance to participate in exclusive sessions and networking opportunities. Reserve your spot
+        today!
+      </p>
+      <!-- Button leading to the registration page -->
+      <a href="register.html"><button class="cta-button">Book Now</button></a>
+    </div>
+  </section>
+
+  <!--===============================================
+           Technical Support Section (Light Theme)
+    ================================================-->
+  <section id="technical-support" class="section-light">
+    <div class="section-container">
+      <h2>Technical Support</h2>
+      <p>
+        Our dedicated technical support team is here to help with any registration or platform-related issues.
+      </p>
+      <p>Email: support@cybersec2025.com | Phone: +1 234 567 890</p>
+    </div>
+  </section>
+
+  <!--===============================================
+           Contact Section (Dark Theme)
+    ================================================-->
+  <section id="contact" class="section-dark">
+    <div class="section-container">
+      <h2>Contact Us</h2>
+      <p>
+        Have questions or need more information? Fill out the form below, and we’ll get back to you as soon as possible.
+      </p>
+      <form style="max-width: 600px; margin: 20px auto; text-align: left;">
+        <div style="margin-bottom: 15px;">
+          <label for="name">Name:</label><br>
+          <input type="text" id="name" name="name"
+            style="width: 100%; padding: 10px; border-radius: 4px; border: none;">
+        </div>
+        <div style="margin-bottom: 15px;">
+          <label for="email">Email:</label><br>
+          <input type="email" id="email" name="email"
+            style="width: 100%; padding: 10px; border-radius: 4px; border: none;">
+        </div>
+        <div style="margin-bottom: 15px;">
+          <label for="message">Message:</label><br>
+          <textarea id="message" name="message" rows="5"
+            style="width: 100%; padding: 10px; border-radius: 4px; border: none;"></textarea>
+        </div>
+        <button type="submit"
+          style="background: linear-gradient(45deg, #66bb6a, #4caf50); border: none; padding: 15px 40px; font-size: 20px; border-radius: 30px; cursor: pointer; transition: transform 0.3s; box-shadow: 0 4px 15px rgba(0,0,0,0.3);">Send
+          Message</button>
+      </form>
+    </div>
+  </section>
+
+  <!--===============================================
+           Footer Section (Light Theme)
+    ================================================-->
+  <footer class="section-light">
+    <div class="footer-container">
+      <div style="display: flex; flex-wrap: wrap; justify-content: space-between; align-items: center;">
+        <div>
+          <h3>Quick Links</h3>
           <ul>
             <li><a href="#home">Home</a></li>
             <li><a href="#about">About</a></li>
             <li><a href="#event-dashboard">Dashboard</a></li>
-            <li><a href="#book-slot">Book Your Slot</a></li>
             <li><a href="#contact">Contact</a></li>
           </ul>
-        </nav>
-        <div class="menu-toggle" onclick="toggleSidebar()" id="menuToggle">
-          <span class="material-icons" id="menuIcon">menu</span>
         </div>
-      </div>
-      <!-- Off-Canvas Sidebar -->
-      <div class="sidebar" id="sidebar">
-        <div class="close-btn" onclick="toggleSidebar()">
-          <span class="material-icons">close</span>
-        </div>
-        <ul>
-          <li><a href="#home" onclick="toggleSidebar()">Home</a></li>
-          <li><a href="#about" onclick="toggleSidebar()">About</a></li>
-          <li><a href="#event-dashboard" onclick="toggleSidebar()">Dashboard</a></li>
-          <li><a href="#myth-busting" onclick="toggleSidebar()">Myth Busting</a></li>
-          <li><a href="#book-slot" onclick="toggleSidebar()">Book Your Slot</a></li>
-          <li><a href="#technical-support" onclick="toggleSidebar()">Technical Support</a></li>
-          <li><a href="#contact" onclick="toggleSidebar()">Contact</a></li>
-        </ul>
-      </div>
-      
-      <!-- Hero Content -->
-      <div class="hero-content">
-        <h1>Cyber Security Conclave</h1>
-        <h2>Empowering the Digital Frontier</h2>
-        <!-- Countdown Timer -->
-        <div id="countdown">
-          <div class="countdown-item">
-            <div id="days" class="flip-digit" data-value="00">
-              <div class="card"><span>00</span></div>
-            </div>
-            <label>Days</label>
-          </div>
-          <div class="countdown-item">
-            <div id="hours" class="flip-digit" data-value="00">
-              <div class="card"><span>00</span></div>
-            </div>
-            <label>Hours</label>
-          </div>
-          <div class="countdown-item">
-            <div id="minutes" class="flip-digit" data-value="00">
-              <div class="card"><span>00</span></div>
-            </div>
-            <label>Minutes</label>
-          </div>
-          <div class="countdown-item">
-            <div id="seconds" class="flip-digit" data-value="00">
-              <div class="card"><span>00</span></div>
-            </div>
-            <label>Seconds</label>
-          </div>
-        </div>
-        <div class="action-buttons">
-          <!-- The Register Now button can for example lead to registration -->
-          <a href="register.html"><button>Register Now</button></a>
-          <!-- You may use Learn More button to scroll to About section -->
-          <a href="#about"><button>Learn More</button></a>
-        </div>
-      </div>
-    </header>
-    
-    <!--===============================================
-           About Section (Light Theme) with Meet the Team
-    ================================================-->
-    <section id="about" class="section-light">
-      <div class="about-container reveal">
-            <!-- Left Side: Image (Handled by CSS) -->
-            <div class="about-image"></div>
-
-            <!-- Right Side: Text Content -->
-            <div class="about-content">
-                <h2>About The Conference</h2>
-                <p>
-                    Cyber Security Conclave 2025 is a premier event designed to bring together experts, enthusiasts, and professionals from around the globe. Discover cutting-edge strategies and insights in cybersecurity, and join us in empowering your digital future.
-                </p>
-                <ul>
-                    <li><span class="tick-mark">&#10004;</span> Networking Sessions</li>
-                    <li><span class="tick-mark">&#10004;</span> Meet New Professional Faces</li>
-                    <li><span class="tick-mark">&#10004;</span> Get Inspired by Amazing Speakers</li>
-                    <li><span class="tick-mark">&#10004;</span> Explore Latest Innovations in Cybersecurity</li>
-                    <li><span class="tick-mark">&#10004;</span> Gain Insights into Emerging Threats & Solutions</li>
-                </ul>
-                <a href="#" class="learn-more-btn">LEARN MORE</a>
-            </div>
-        </div>
-
-        <!-- Why You Should Join Us Section  -->
-        <div class=".why-join reveal">
-            <h2 class="why-join-title">Why You Should Join Us</h2>
-            <div class="cards-container">
-                <div class="card">
-                    <div class="card-header">
-                        <i class="lni lni-microphone icon"></i>
-                        <h3 class="card-title">Great Speakers</h3>
-                    </div>
-                    <p>Learn from industry-leading experts.</p>
-                    <div class="card-badge">01</div>
-                </div>
-
-                <div class="card">
-                    <div class="card-header">
-                        <i class="lni lni-users icon"></i>
-                        <h3 class="card-title">New People</h3>
-                    </div>
-                    <p>Meet and connect with professionals.</p>
-                    <div class="card-badge">02</div>
-                </div>
-
-                <div class="card">
-                    <div class="card-header">
-                        <i class="lni lni-bullhorn icon"></i>
-                        <h3 class="card-title">Global Event</h3>
-                    </div>
-                    <p>Join a worldwide conference experience.</p>
-                    <div class="card-badge">03</div>
-                </div>
-
-                <div class="card">
-                    <div class="card-header">
-                        <i class="lni lni-heart icon"></i>
-                        <h3 class="card-title">Get Inspired</h3>
-                    </div>
-                    <p>Hear motivational stories from experts.</p>
-                    <div class="card-badge">04</div>
-                </div>
-
-                <div class="card">
-                    <div class="card-header">
-                        <i class="lni lni-network icon"></i>
-                        <h3 class="card-title">Networking Session</h3>
-                    </div>
-                    <p>Build valuable professional relationships.</p>
-                    <div class="card-badge">05</div>
-                </div>
-
-                <div class="card">
-                    <div class="card-header">
-                        <i class="lni lni-users icon"></i>
-                        <h3 class="card-title">Meet New Faces</h3>
-                    </div>
-                    <p>Connect with fresh talent and leaders.</p>
-                    <div class="card-badge">06</div>
-                </div>
-            </div>
-        </div>
-
-        <!-- who attend sections -->
-        <div class="who-attends reveal">
-            <h2 class="who-attends-title">Who Attends ?</h2>
-            <div class="attendees-container">
-
-                <div class="attendee-card">
-                    <img src="/assets/about/Developer activity-amico.png " alt="Mission Image">
-                    <h3 class="card-title">Developers</h3>
-                    <p>Systems, Embedded, Applications, Kernel & Operating Systems</p>
-                </div>
-
-                <div class="attendee-card">
-                    <img src="/assets/about/Operating system upgrade-amico.png " alt="Learn Image">
-                    <h3 class="card-title">Operations</h3>
-                    <p>Architects, SRE, System Administrators and DevOps</p>
-                </div>
-
-                <div class="attendee-card">
-                    <img src="/assets/about/Group Chat-amico.png " alt="Benefits Image">
-                    <h3 class="card-title">Community & Leadership</h3>
-                    <p>Technical Managers, Community Managers, Executive Leaders, Legal & Compliance, OSPO Teams</p>
-                </div>
-
-                <div class="attendee-card">
-                    <img src="/assets/about/Social media-bro.png " alt="Networking Image">
-                    <h3 class="card-title">Academic, Media, Other</h3>
-                    <p>Professors, Students, Media, Analysts, Product, Biz Dev, Marketing</p>
-                </div>
-
-            </div>
-        </div>
-
-        <!-- taem section -->
-
-        <div class="our-team  reveal">
-            <h2 class="team-title">Meet Our Team</h2>
-            <p class="team-description">Our team of professionals is dedicated to excellence, creativity, and innovation.</p>
-
-            <div class="team-container">
-
-                <!-- Team Member 1 -->
-                <div class="team-card">
-                    <div class="team-img" style="background-image: url('/assets/about/teamm.png.crdownload');">
-                        <div class="social-icons">
-                            <a href="#"><i class="fab fa-facebook-f"></i></a>
-                            <a href="#"><i class="fab fa-twitter"></i></a>
-                            <a href="#"><i class="fab fa-instagram"></i></a>
-                            <a href="#"><i class="fab fa-linkedin-in"></i></a>
-                        </div>
-                    </div>
-                    <h3 class="team-name">Emily Williams</h3>
-                    <p class="team-role">Product Designer</p>
-                </div>
-
-                <!-- Team Member 2 -->
-                <div class="team-card  reveal">
-                    <div class="team-img" style="background-image: url('/assets/about/teamm2.png');">
-                        <div class="social-icons">
-                            <a href="#"><i class="fab fa-facebook-f"></i></a>
-                            <a href="#"><i class="fab fa-twitter"></i></a>
-                            <a href="#"><i class="fab fa-instagram"></i></a>
-                            <a href="#"><i class="fab fa-linkedin-in"></i></a>
-                        </div>
-                    </div>
-                    <h3 class="team-name">Patric Green</h3>
-                    <p class="team-role">Front-end Developer</p>
-                </div>
-
-                <!-- Team Member 3 -->
-                <div class="team-card">
-                    <div class="team-img" style="background-image: url('/assets/about/teamm3.png');">
-                        <div class="social-icons">
-                            <a href="#"><i class="fab fa-facebook-f"></i></a>
-                            <a href="#"><i class="fab fa-twitter"></i></a>
-                            <a href="#"><i class="fab fa-instagram"></i></a>
-                            <a href="#"><i class="fab fa-linkedin-in"></i></a>
-                        </div>
-                    </div>
-                    <h3 class="team-name">Paul Kowalsy</h3>
-                    <p class="team-role">Lead Designer</p>
-                </div>
-
-                <!-- Team Member 4 -->
-                <div class="team-card">
-                    <div class="team-img" style="background-image: url('/assets/about/teamm4.png');">
-                        <div class="social-icons">
-                            <a href="#"><i class="fab fa-facebook-f"></i></a>
-                            <a href="#"><i class="fab fa-twitter"></i></a>
-                            <a href="#"><i class="fab fa-instagram"></i></a>
-                            <a href="#"><i class="fab fa-linkedin-in"></i></a>
-                        </div>
-                    </div>
-                    <h3 class="team-name">Jhon Doe</h3>
-                    <p class="team-role">Back-end Developer</p>
-                </div>
-
-            </div>
-          
-    </section>
-    
-    <!--===============================================
-           Event Dashboard Section (Dark Theme) with Day Toggle
-    ================================================-->
-    <section id="event-dashboard" class="section-dark">
-      <div class="section-container">
-        <h2>Event Dashboard</h2>
-        <p>
-          Access real-time updates, schedules, and interactive sessions.
-        </p>
-        <!-- Toggle Buttons for Day 1 and Day 2 -->
-        <div class="dashboard-toggle">
-          <button id="day1-btn" class="active" onclick="toggleDay('day1')">Day 1</button>
-          <button id="day2-btn" onclick="toggleDay('day2')">Day 2</button>
-        </div>
-        <!-- Dashboard content for Day 1 -->
-        <div id="day1-dashboard" class="dashboard-day">
-          <div class="card-item">
-            <h3>Schedule</h3>
-            <p>Day 1 schedule - Registration, Opening Ceremony, and Keynote.</p>
-          </div>
-          <div class="card-item">
-            <h3>Speakers</h3>
-            <p>Featured speakers presenting on cybersecurity trends.</p>
-          </div>
-          <div class="card-item">
-            <h3>Highlights</h3>
-            <p>Refreshments & networking sessions.</p>
-          </div>
-        </div>
-        <!-- Dashboard content for Day 2 (hidden by default) -->
-        <div id="day2-dashboard" class="dashboard-day" style="display: none;">
-          <div class="card-item">
-            <h3>Workshops</h3>
-            <p>Hands-on sessions on advanced cybersecurity techniques.</p>
-          </div>
-          <div class="card-item">
-            <h3>Panel Discussion</h3>
-            <p>Interactive discussion with industry experts.</p>
-          </div>
-          <div class="card-item">
-            <h3>Closing Ceremony</h3>
-            <p>Wrap-up and award ceremony.</p>
+        <div>
+          <h3>Follow Us</h3>
+          <div class="social-buttons">
+            <a href="#"><span class="material-icons">public</span></a>
+            <a href="#"><span class="material-icons">share</span></a>
+            <a href="#"><span class="material-icons">thumb_up</span></a>
+            <a href="#"><span class="material-icons">chat</span></a>
           </div>
         </div>
       </div>
-    </section>
-    
-    <!--===============================================
-           Myth Busting Section (Light Theme, Stacked)
-    ================================================-->
-    <section id="myth-busting" class="section-light">
-      <div class="section-container">
-        <h2>Myth Busting</h2>
-        <div class="myth-container">
-          <div class="myth-block">
-            <h3>Myth vs Fact</h3>
-            <ul>
-              <li>Myth: Cybersecurity is only for large companies.</li>
-              <li>Fact: Every organization, regardless of size, is at risk.</li>
-              <li>Myth: Antivirus software is enough.</li>
-              <li>Fact: A layered security approach is essential.</li>
-            </ul>
-          </div>
-          <div class="myth-block">
-            <h3>Did You Know?</h3>
-            <ul>
-              <li>Over 40% of cyber attacks target small businesses.</li>
-              <li>Hackers can breach systems in under 5 minutes.</li>
-              <li>Continuous training and awareness are key to defense.</li>
-            </ul>
-          </div>
-        </div>
-      </div>
-    </section>
-    
-    <!--===============================================
-           Book Your Slot Section (Dark Theme)
-    ================================================-->
-    <section id="book-slot" class="section-dark">
-      <div class="section-container">
-        <h2>Book Your Slot</h2>
-        <p>
-          Don’t miss your chance to participate in exclusive sessions and networking opportunities. Reserve your spot today!
-        </p>
-        <!-- Button leading to the registration page -->
-        <a href="register.html"><button class="cta-button">Book Now</button></a>
-      </div>
-    </section>
-    
-    <!--===============================================
-           Technical Support Section (Light Theme)
-    ================================================-->
-    <section id="technical-support" class="section-light">
-      <div class="section-container">
-        <h2>Technical Support</h2>
-        <p>
-          Our dedicated technical support team is here to help with any registration or platform-related issues.
-        </p>
-        <p>Email: support@cybersec2025.com | Phone: +1 234 567 890</p>
-      </div>
-    </section>
-    
-    <!--===============================================
-           Contact Section (Dark Theme)
-    ================================================-->
-    <section id="contact" class="section-dark">
-      <div class="section-container">
-        <h2>Contact Us</h2>
-        <p>
-          Have questions or need more information? Fill out the form below, and we’ll get back to you as soon as possible.
-        </p>
-        <form style="max-width: 600px; margin: 20px auto; text-align: left;">
-          <div style="margin-bottom: 15px;">
-            <label for="name">Name:</label><br>
-            <input type="text" id="name" name="name" style="width: 100%; padding: 10px; border-radius: 4px; border: none;">
-          </div>
-          <div style="margin-bottom: 15px;">
-            <label for="email">Email:</label><br>
-            <input type="email" id="email" name="email" style="width: 100%; padding: 10px; border-radius: 4px; border: none;">
-          </div>
-          <div style="margin-bottom: 15px;">
-            <label for="message">Message:</label><br>
-            <textarea id="message" name="message" rows="5" style="width: 100%; padding: 10px; border-radius: 4px; border: none;"></textarea>
-          </div>
-          <button type="submit" style="background: linear-gradient(45deg, #66bb6a, #4caf50); border: none; padding: 15px 40px; font-size: 20px; border-radius: 30px; cursor: pointer; transition: transform 0.3s; box-shadow: 0 4px 15px rgba(0,0,0,0.3);">Send Message</button>
-        </form>
-      </div>
-    </section>
-    
-    <!--===============================================
-           Footer Section (Light Theme)
-    ================================================-->
-    <footer class="section-light">
-      <div class="footer-container">
-        <div style="display: flex; flex-wrap: wrap; justify-content: space-between; align-items: center;">
-          <div>
-            <h3>Quick Links</h3>
-            <ul>
-              <li><a href="#home">Home</a></li>
-              <li><a href="#about">About</a></li>
-              <li><a href="#event-dashboard">Dashboard</a></li>
-              <li><a href="#contact">Contact</a></li>
-            </ul>
-          </div>
-          <div>
-            <h3>Follow Us</h3>
-            <div class="social-buttons">
-              <a href="#"><span class="material-icons">public</span></a>
-              <a href="#"><span class="material-icons">share</span></a>
-              <a href="#"><span class="material-icons">thumb_up</span></a>
-              <a href="#"><span class="material-icons">chat</span></a>
-            </div>
-          </div>
-        </div>
-        <p style="margin-top: 10px;">&copy; 2025 CyberSec2025. All Rights Reserved.</p>
-      </div>
-    </footer>  
+      <p style="margin-top: 10px;">&copy; 2025 CyberSec2025. All Rights Reserved.</p>
+    </div>
+  </footer>
   <!-- Shared JavaScript -->
   <script src="js/main.js"></script>
 </body>
+
 </html>
