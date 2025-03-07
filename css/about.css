@@ -1,34 +1,601 @@
 /*===============================================
     =            About Section - Meet the Team     =
     ================================================*/
-    .team-container {
-        margin-top: 40px;
-        display: flex;
+   /* ABOUT SECTION */
+
+.about-container {
+    display: flex;
+    align-items: center;
+    gap: 50px;
+    flex-wrap: wrap;
+    justify-content: center;
+    text-align: left;
+    padding: 40px 5%;
+}
+
+
+/* Left Side: Background Image */
+
+.about-image {
+    flex: 1;
+    max-width: 500px;
+    /* Increased size */
+    height: 400px;
+    /* Increased size */
+    background-image: url("/assets/about/Conference-amico\ \(1\).png");
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+    transition: transform 0.4s ease-in-out;
+}
+
+
+/* Image Hover Effect */
+
+.about-image:hover {
+    transform: scale(1.05);
+    /* Smooth zoom effect */
+}
+
+
+/* Right Side: Text Content */
+
+.about-content {
+    flex: 2;
+    max-width: 650px;
+}
+
+.about-content h2 {
+    font-size: 38px;
+    font-weight: bold;
+    margin-bottom: 15px;
+}
+
+.about-content p {
+    text-align: justify;
+    line-height: 1.8;
+    font-size: 18px;
+    color: #333;
+    margin-bottom: 20px;
+}
+
+
+/* List Items */
+
+.about-content ul {
+    list-style: none;
+    padding: 0;
+    margin-bottom: 25px;
+}
+
+.about-content ul li {
+    font-size: 18px;
+    margin-bottom: 12px;
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    font-weight: 500;
+    color: #000;
+}
+
+
+/* Green Tick Mark */
+
+.tick-mark {
+    color: #4CAF50;
+    font-size: 20px;
+    font-weight: bold;
+}
+
+
+/* Button Styling */
+
+.learn-more-btn {
+    background: #4CAF50;
+    color: white;
+    padding: 14px 28px;
+    /* Increased size */
+    border-radius: 30px;
+    font-size: 20px;
+    font-weight: bold;
+    border: none;
+    cursor: pointer;
+    box-shadow: 0px 5px 15px rgba(0, 0, 0, 0.1);
+    transition: background 0.3s ease-in-out, transform 0.3s ease-in-out;
+    display: inline-block;
+    text-decoration: none;
+}
+
+
+/* Button Hover Effect */
+
+.learn-more-btn:hover {
+    background: #388E3C;
+    transform: scale(1.05);
+}
+
+
+/* RESPONSIVE DESIGN */
+
+@media (max-width: 1024px) {
+    .about-container {
+        flex-direction: column;
+        text-align: center;
+    }
+    .about-image {
+        max-width: 100%;
+        height: 350px;
+        /* Adjust size for smaller screens */
+    }
+    .about-content {
+        max-width: 90%;
+    }
+}
+
+@media (max-width: 768px) {
+    .about-content h2 {
+        font-size: 32px;
+    }
+    .about-content p {
+        font-size: 16px;
+    }
+    .learn-more-btn {
+        font-size: 18px;
+        padding: 12px 24px;
+    }
+}
+
+
+/* Why You Should Join Us Section */
+
+.why-join {
+    margin-top: 60px;
+}
+
+.why-join-title {
+    text-align: center;
+    font-size: 32px;
+    font-weight: bold;
+    margin-bottom: 40px;
+}
+
+
+/* Container for Cards */
+
+.cards-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 25px;
+    max-width: 1100px;
+    margin: auto;
+}
+
+
+/* Individual Card Styling */
+
+.card {
+    background: #fff;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.05);
+    text-align: left;
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    /* Ensures spacing is even */
+    align-items: flex-start;
+    width: 320px;
+    /* Set equal width */
+    height: 200px;
+    /* Set equal height */
+    border: 1px solid #E0E0E0;
+    transition: transform 0.4s ease-in-out, box-shadow 0.4s ease-in-out;
+}
+
+.card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
+}
+
+
+/* Icon Styling */
+
+.card-header {
+    display: flex;
+    align-items: center;
+    /* Align icon and heading horizontally */
+    gap: 15px;
+    /* Space between icon and text */
+}
+
+.card .icon {
+    width: 55px;
+    /* Exact size */
+    height: 55px;
+    font-size: 55px;
+    /* Ensure proper size */
+    color: #b0b0b0;
+    /* Default gray */
+    transition: color 0.3s ease-in-out;
+}
+
+
+/* Icon Hover Effect */
+
+.card .icon:hover {
+    color: #4CAF50;
+}
+
+
+/* Heading inside Card */
+
+.card h3 {
+    font-size: 20px;
+    /* Larger */
+    font-weight: bold;
+    color: #222;
+    margin: 0;
+    flex: 1;
+    /* Allows heading to take remaining space */
+}
+
+
+/* Paragraph inside Card */
+
+.card p {
+    font-size: 15px;
+    color: #666;
+    line-height: 1.5;
+    margin-top: 10px;
+    /* Adds space between heading and text */
+}
+
+
+/* Card Badge */
+
+.card-badge {
+    position: absolute;
+    bottom: 10px;
+    right: 10px;
+    background: #4CAF50;
+    color: white;
+    font-size: 14px;
+    font-weight: bold;
+    padding: 8px 14px;
+    border-top-left-radius: 18px;
+}
+
+
+/* Responsive Design */
+
+@media (max-width: 1024px) {
+    .cards-container {
         flex-wrap: wrap;
         justify-content: center;
-        gap: 20px;
-      }
-      .team-member {
-        background: #fff;
-        color: #000;
-        border-radius: 8px;
-        overflow: hidden;
-        max-width: 200px;
-        box-shadow: 0 4px 15px rgba(0,0,0,0.2);
-      }
-      .team-member img {
+    }
+    .card {
+        width: calc(50% - 20px);
+        height: 220px;
+    }
+}
+
+@media (max-width: 768px) {
+    .cards-container {
+        flex-direction: column;
+        align-items: center;
+    }
+    .card {
         width: 100%;
-        display: block;
-      }
-      .team-member .member-info {
-        padding: 10px;
-        text-align: center;
-      }
-      .team-member .member-info h4 {
-        margin-bottom: 5px;
-        font-size: 18px;
-      }
-      .team-member .member-info p {
-        font-size: 14px;
-        color: #555;
-      }
+        height: auto;
+    }
+}
+
+
+/* Who Attends Section */
+
+
+/* Who Attends Section */
+
+.who-attends {
+    margin-top: 60px;
+}
+
+.who-attends-title {
+    text-align: center;
+    font-size: 32px;
+    font-weight: bold;
+    margin-bottom: 40px;
+}
+
+
+/* Cards Container */
+
+.attendees-container {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    /* 4 cards in one row */
+    gap: 20px;
+    max-width: 1200px;
+    margin: auto;
+}
+
+
+/* Individual Card */
+
+.attendee-card {
+    background: #fff;
+    /* White background */
+    text-align: center;
+    border-radius: 10px;
+    width: 100%;
+    /* Auto adjust within grid */
+    height: auto;
+    /* Adjust height for content */
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-start;
+    padding-bottom: 20px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.05);
+    border: 1px solid #E0E0E0;
+    /* Light gray border */
+    overflow: hidden;
+    transition: transform 0.5s ease-in-out, box-shadow 0.4s ease-in-out;
+}
+
+
+/* Hover Effect - Smooth Scaling & Shadow */
+
+.attendee-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
+}
+
+
+/* Image Styling */
+
+.attendee-card img {
+    width: 100%;
+    height: 180px;
+    object-fit: cover;
+    border-top-left-radius: 10px;
+    border-top-right-radius: 10px;
+}
+
+
+/* Heading */
+
+.attendee-card h3 {
+    font-size: 18px;
+    font-weight: bold;
+    color: #000;
+    /* Black title */
+    margin: 15px 0 10px;
+    text-transform: uppercase;
+}
+
+
+/* Paragraph */
+
+.attendee-card p {
+    font-size: 14px;
+    color: #666;
+    /* Gray text */
+    padding: 0 15px;
+    line-height: 1.5;
+}
+
+
+/* Responsive Design */
+
+@media (max-width: 1024px) {
+    .attendees-container {
+        grid-template-columns: repeat(2, 1fr);
+        /* 2 cards per row */
+    }
+}
+
+@media (max-width: 768px) {
+    .attendees-container {
+        grid-template-columns: repeat(1, 1fr);
+        /* 1 card per row */
+    }
+}
+
+
+/* Responsive Design */
+
+@media (max-width: 1024px) {
+    .attendees-container {
+        grid-template-columns: repeat(2, 1fr);
+        /* 2 cards per row */
+    }
+}
+
+@media (max-width: 768px) {
+    .attendees-container {
+        grid-template-columns: repeat(1, 1fr);
+        /* 1 card per row */
+    }
+}
+
+
+/* Centering "Meet the Team" */
+
+
+/* Team Section */
+
+.our-team {
+    text-align: center;
+    padding: 60px 20px;
+}
+
+.team-title {
+    font-size: 32px;
+    font-weight: bold;
+    margin-bottom: 10px;
+}
+
+.team-description {
+    font-size: 16px;
+    color: #666;
+    margin-bottom: 40px;
+}
+
+
+/* Team Container */
+
+.team-container {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    /* 4 columns */
+    gap: 20px;
+    max-width: 1200px;
+    margin: auto;
+}
+
+
+/* Individual Team Card */
+
+.team-card {
+    background: #fff;
+    border-radius: 10px;
+    overflow: hidden;
+    text-align: center;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s;
+}
+
+.team-card:hover {
+    transform: translateY(-5px);
+}
+
+
+/* Team Image */
+
+.team-img {
+    width: 100%;
+    height: 250px;
+    background-size: cover;
+    background-position: center;
+    position: relative;
+}
+
+
+/* Team Image Hover Overlay (Smooth Transition from Top to Bottom) */
+
+.team-img::after {
+    content: "";
+    position: absolute;
+    top: -100%;
+    /* Start Outside the Card */
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.6);
+    transition: top 0.5s ease-in-out;
+}
+
+.team-card:hover .team-img::after {
+    top: 0;
+    /* Move Down Gradually */
+}
+
+
+/* Social Icons (Slide Down Effect) */
+
+.social-icons {
+    position: absolute;
+    top: 40%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    display: flex;
+    gap: 12px;
+    opacity: 0;
+    transition: opacity 0.5s ease-in-out, top 0.5s ease-in-out;
+}
+
+.team-card:hover .social-icons {
+    opacity: 1;
+    top: 50%;
+    /* Slide Down Gradually */
+}
+
+
+/* Social Icon Styling */
+
+.social-icons a {
+    background: #4CAF50;
+    color: white;
+    width: 40px;
+    height: 40px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 50%;
+    font-size: 18px;
+    text-decoration: none;
+    transition: background 0.4s ease-in-out, transform 0.3s ease-in-out;
+}
+
+
+/* Slightly Enlarge on Hover */
+
+.social-icons a:hover {
+    background: #4caf50;
+    transform: scale(1.1);
+}
+
+
+/* Team Name */
+
+.team-name {
+    font-size: 18px;
+    font-weight: bold;
+    margin: 15px 0 5px;
+}
+
+
+/* Team Role */
+
+.team-role {
+    font-size: 14px;
+    color: #666;
+    margin-bottom: 15px;
+}
+
+
+/* Responsive Design */
+
+@media (max-width: 1024px) {
+    .team-container {
+        grid-template-columns: repeat(2, 1fr);
+        /* 2 cards per row */
+    }
+}
+
+@media (max-width: 768px) {
+    .team-container {
+        grid-template-columns: repeat(1, 1fr);
+        /* 1 card per row */
+    }
+}
+
+
+/* Initial State - Hide Sections */
+
+.reveal {
+    opacity: 0;
+    transform: translateY(50px);
+    transition: opacity 0.8s ease-out, transform 0.8s ease-out;
+}
+
+
+/* When the Section is Visible */
+
+.reveal.visible {
+    opacity: 1;
+    transform: translateY(0);
+}
