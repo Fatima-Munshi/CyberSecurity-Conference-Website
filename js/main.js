@@ -88,4 +88,34 @@ function toggleSidebar() {
       btnDay2.classList.add('active');
     }
   }
+
+// about section//
+document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+    anchor.addEventListener("click", function(e) {
+        e.preventDefault();
+        document.querySelector(this.getAttribute("href")).scrollIntoView({
+            behavior: "smooth"
+        });
+    });
+});
+
+
+// Select all elements with class "reveal"
+const revealElements = document.querySelectorAll(".reveal");
+
+function revealOnScroll() {
+    revealElements.forEach((element) => {
+        const elementTop = element.getBoundingClientRect().top;
+        const windowHeight = window.innerHeight;
+        if (elementTop < windowHeight - 100) {
+            element.classList.add("visible");
+        }
+    });
+}
+
+// Run function when scrolling
+window.addEventListener("scroll", revealOnScroll);
+
+// Run on page load to check initial position
+window.onload = revealOnScroll;
   
