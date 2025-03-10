@@ -9,19 +9,19 @@ function toggleSidebar() {
   }
   
   // Animate Flip for Countdown
-  function animateFlip(cardId, newVal) {
-    const container = document.getElementById(cardId);
-    const card = container.querySelector('.card');
+  function animateFlip(cardhId, newVal) {
+    const container = document.getElementById(cardhId);
+    const cardh = container.querySelector('.cardh');
     const currentVal = container.getAttribute('data-value');
     if (currentVal === newVal) return;
-    card.classList.add('flip');
+    cardh.classList.add('flip');
     setTimeout(() => {
-      card.querySelector('span').textContent = newVal;
+      cardh.querySelector('span').textContent = newVal;
       container.setAttribute('data-value', newVal);
     }, 300);
-    card.addEventListener('animationend', function handler() {
-      card.classList.remove('flip');
-      card.removeEventListener('animationend', handler);
+    cardh.addEventListener('animationend', function handler() {
+      cardh.classList.remove('flip');
+      cardh.removeEventListener('animationend', handler);
     });
   }
   
